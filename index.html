@@ -1,24 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Ejemplo Multi-idioma</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f9f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        .checkmark {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        p {
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 25px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-  <h1 id="greeting"></h1>
-  <p id="description"></p>
-
-  <script>
-    const texts = {
-      'es': { greeting: 'Hola!', description: 'Bienvenido a mi web.' },
-      'en': { greeting: 'Hello!', description: 'Welcome to my website.' },
-      'fr': { greeting: 'Bonjour!', description: 'Bienvenue sur mon site.' }
-    };
-    const userLang = navigator.language || navigator.languages[0];
-    const langCode = userLang.split('-')[0];
-    const selectedTexts = texts[langCode] || texts['en'];
-    document.getElementById('greeting').textContent = selectedTexts.greeting;
-    document.getElementById('description').textContent = selectedTexts.description;
-  </script>
+    <h1 id="greeting"></h1>
+  
+    <script>
+      const texts = {
+        'es': { title: 'Pago realizado correctamente', description: '¡Tu transacción se ha completado con éxito!' },
+        'en': { title: 'Payment made correctly', description: 'Your transaction has been completed successfully!' },
+        'fr': { title: 'Paiement effectué correctement', description: 'Votre transaction a été effectuée avec succès !' }
+      };
+      const userLang = navigator.language || navigator.languages[0];
+      const langCode = userLang.split('-')[0];
+      const selectedTexts = texts[langCode] || texts['en'];
+      document.getElementById('title').textContent = selectedTexts.title;
+      document.getElementById('description').textContent = selectedTexts.description;
+    </script>
+    <div class="container">
+        <div class="checkmark">✓</div>
+        <h1 id="description"></h1>
+        <footer>
+            &copy; 2025 Ingeteam.
+        </footer>
+    </div>
 </body>
 </html>
+
+
