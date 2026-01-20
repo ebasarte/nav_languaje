@@ -57,8 +57,13 @@
     </style>
 </head>
 <body>
-    <h1 id="greeting"></h1>
-  
+    <div class="container">
+        <div class="checkmark">✓</div>
+        <h1 id="description"></h1>
+        <footer>
+            &copy; 2025 Ingeteam.
+        </footer>
+    </div>
     <script>
       const texts = {
         'es': { title: 'Pago realizado correctamente', description: '¡Tu transacción se ha completado con éxito!' },
@@ -68,16 +73,9 @@
       const userLang = navigator.language || navigator.languages[0];
       const langCode = userLang.split('-')[0];
       const selectedTexts = texts[langCode] || texts['en'];
-      document.getElementById('title').textContent = selectedTexts.title;
+      document.title = selectedTexts.title;
       document.getElementById('description').textContent = selectedTexts.description;
     </script>
-    <div class="container">
-        <div class="checkmark">✓</div>
-        <h1 id="description"></h1>
-        <footer>
-            &copy; 2025 Ingeteam.
-        </footer>
-    </div>
 </body>
 </html>
 
