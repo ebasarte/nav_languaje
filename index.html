@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Multi-idioma</title>
+</head>
+<body>
+  <h1 id="greeting"></h1>
+  <p id="description"></p>
+
+  <script>
+    const texts = {
+      'es': { greeting: 'Hola!', description: 'Bienvenido a mi web.' },
+      'en': { greeting: 'Hello!', description: 'Welcome to my website.' },
+      'fr': { greeting: 'Bonjour!', description: 'Bienvenue sur mon site.' }
+    };
+    const userLang = navigator.language || navigator.languages[0];
+    const langCode = userLang.split('-')[0];
+    const selectedTexts = texts[langCode] || texts['en'];
+    document.getElementById('greeting').textContent = selectedTexts.greeting;
+    document.getElementById('description').textContent = selectedTexts.description;
+  </script>
+</body>
+</html>
